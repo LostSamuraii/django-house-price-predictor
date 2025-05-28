@@ -1,0 +1,8 @@
+Venv activattion:
+.\house_pred\Scripts\activate
+
+Django Project creation :
+django-admin startproject housepredictor_project .
+
+Run django server:
+python manage.py runserver

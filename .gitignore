@@ -1,0 +1,32 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual Environment
+venv/
+venv_house_predictor/ # Or your specific venv name
+house_pred/ # If this is your venv name and it's inside the project root
+
+# Django
+db.sqlite3 # If you don't want to track the SQLite database (often good for local dev db)
+*.log
+local_settings.py # If you have a separate local settings file
+media/ # If you handle user-uploaded media (not in this project, but good practice)
+# staticfiles/ # If you run collectstatic into a project-level staticfiles dir for deployment
+
+# IDE / Editor specific
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS specific
+.DS_Store
+Thumbs.db
+
+# Sensitive information (if you had any)
+# .env
+# secrets.json
+house_pred/

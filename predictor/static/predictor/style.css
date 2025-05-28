@@ -1,0 +1,269 @@
+/* predictor/static/predictor/style.css - New Version */
+
+:root {
+    --primary-color: #118ab2; /* Vibrant Teal/Blue */
+    --secondary-color: #073b4c; /* Deep Ocean Blue (for text, darker elements) */
+    --accent-color: #ef476f; /* Vibrant Coral/Pink for accents & CTAs */
+    --highlight-color: #ffd166; /* Yellow for subtle highlights or secondary accents */
+    --bg-light: #fdfdff; /* Very clean, almost white background */
+    --bg-card: #ffffff;
+    --text-primary: #073b4c; /* Using secondary as primary text color */
+    --text-secondary: #6D6875; /* Muted grey for less important text */
+    --border-color: #eef0f2;
+    --border-radius: 0.75rem; /* 12px */
+    --shadow-soft: 0 4px 15px rgba(0, 0, 0, 0.05);
+    --shadow-medium: 0 8px 25px rgba(0, 0, 0, 0.08);
+    --shadow-strong: 0 12px 35px rgba(0,0,0,0.1);
+    --font-primary: 'Open Sans', sans-serif;
+    --font-headings: 'Montserrat', sans-serif;
+}
+
+body {
+    font-family: var(--font-primary);
+    background-color: var(--bg-light);
+    color: var(--text-primary);
+    line-height: 1.75;
+    padding-top: 100px; /* Increased for taller navbar + hero peek */
+    font-size: 16px;
+}
+
+.navbar.app-navbar { /* Added a class for more specific targeting */
+    background-color: rgba(255, 255, 255, 0.97) !important; /* Slightly transparent white */
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.app-logo {
+    font-family: var(--font-headings);
+    font-weight: 800;
+    font-size: 2rem;
+    color: var(--primary-color) !important;
+}
+.app-logo i {
+    color: var(--accent-color); /* Use accent for the logo icon */
+}
+
+.hero-section {
+    padding: 5rem 1.5rem 6rem 1.5rem; /* More vertical padding */
+    background: linear-gradient(135deg, var(--primary-color) 0%, #06D6A0 100%); /* Teal to Greenish-Teal gradient */
+    color: white;
+    margin-bottom: -60px; /* Negative margin to pull card up */
+    position: relative; /* For z-index if card overlaps */
+    text-align: center;
+}
+
+.hero-title {
+    font-family: var(--font-headings);
+    font-weight: 800;
+    font-size: 3.8rem; /* Even larger */
+    margin-bottom: 1rem;
+    color: white;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.hero-subtitle {
+    font-size: 1.35rem;
+    max-width: 750px;
+    margin-left: auto;
+    margin-right: auto;
+    color: rgba(255,255,255,0.9);
+    font-weight: 400;
+    margin-bottom: 0;
+}
+
+.predictor-section {
+    padding-top: 3rem; /* Extra space because of hero's negative margin */
+    padding-bottom: 4rem;
+    position: relative; /* Ensure card is above hero if overlap due to negative margin */
+    z-index: 10;
+}
+
+.form-card {
+    background-color: var(--bg-card);
+    border-radius: var(--border-radius);
+    /* Increased horizontal padding significantly */
+    padding: 3rem 4rem; 
+    box-shadow: var(--shadow-strong);
+    border: none; /* Remove border, rely on shadow */
+}
+
+.form-card-title {
+    font-family: var(--font-headings);
+    font-weight: 700;
+    color: var(--secondary-color); /* Darker blue for this title */
+    font-size: 2.2rem;
+    margin-bottom: 1.5rem;
+}
+
+#predictionForm > p.text-muted { /* Targeting the intro paragraph */
+    text-align: center;
+    font-size: 1rem;
+    color: var(--text-secondary);
+    margin-bottom: 3rem !important; 
+}
+
+.form-label {
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 0.75rem; /* More space below label */
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+}
+.form-label i {
+    margin-right: 0.6rem;
+    color: var(--primary-color); /* Use primary color for label icons */
+    font-size: 1.2em;
+}
+
+.form-control,
+.form-select {
+    border-radius: 6px; /* Slightly sharper inputs */
+    border: 1px solid #ced4da; /* Standard Bootstrap border color */
+    padding: 1rem 1.2rem; /* Generous padding */
+    font-size: 1rem;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    background-color: #fff;
+}
+.form-control::placeholder {
+    color: #aaa;
+}
+
+.form-control:focus,
+.form-select:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.25rem rgba(17, 138, 178, 0.25); /* Focus glow with primary color */
+    outline: none;
+}
+
+.form-text {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    padding-left: 0.25rem; /* Align with input text */
+}
+
+.btn-predict {
+    background-color: var(--accent-color);
+    border: none;
+    color: white;
+    font-family: var(--font-headings);
+    font-weight: 700;
+    font-size: 1.2rem;
+    padding: 0.9rem 2.5rem; /* Larger button padding */
+    border-radius: 50px; /* Pill shape */
+    transition: all 0.3s ease; /* Smooth all transitions */
+    box-shadow: 0 4px 12px rgba(239, 71, 111, 0.3); /* Shadow with accent color - static RGBA for accent */
+    letter-spacing: 0.5px;
+}
+
+.btn-predict:hover {
+    color: white;
+    background-color: #e0395f; /* Darker accent */
+    transform: translateY(-4px) scale(1.03);
+    box-shadow: 0 8px 20px rgba(239, 71, 111, 0.4); /* Static RGBA for accent */
+}
+.btn-predict:active {
+    transform: translateY(-2px) scale(1);
+}
+.btn-predict i {
+    font-size: 1.15em;
+    position: relative;
+    top: 1px; /* Align icon better with text */
+}
+
+
+#predictionResult {
+    padding: 2rem; 
+    border-radius: var(--border-radius);
+    font-size: 1.3rem;
+    font-weight: 600;
+    transition: all 0.3s ease-in-out;
+    line-height: 1.6;
+    margin-top: 3rem; /* More space above results */
+}
+
+#predictionResult.prediction-success {
+    background-color: #E8F5E9; /* Light Green from Material Design */
+    color: #2E7D32; /* Dark Green */
+    border: 1px solid #A5D6A7;
+}
+
+#predictionResult.prediction-error {
+    background-color: #FFEBEE; /* Light Pink from Material Design */
+    color: #C62828; /* Dark Red */
+    border: 1px solid #FFCDD2;
+}
+
+#predictionResult .loading-message {
+    color: var(--text-secondary);
+    font-style: italic;
+}
+
+.app-footer {
+    background-color: var(--bg-light);
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    border-top: 1px solid var(--border-color);
+    padding: 2rem 0; /* More padding in footer */
+}
+.app-footer p {
+    margin-bottom: 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) { /* Target tablets */
+    .form-card {
+        padding: 2.5rem 3rem;
+    }
+    .hero-title {
+        font-size: 3rem;
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        padding-top: 80px; 
+        font-size: 15px;
+    }
+    .hero-section {
+        padding: 3.5rem 1rem 5rem 1rem;
+        margin-bottom: -40px; 
+    }
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    .hero-subtitle {
+        font-size: 1.1rem;
+    }
+    .form-card {
+        padding: 2rem 1.5rem; 
+    }
+    .btn-predict {
+        font-size: 1.1rem;
+        padding: 0.8rem 2rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-section {
+        border-bottom-left-radius: 40px;
+    }
+    .hero-title {
+        font-size: 2rem;
+    }
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+    .form-card {
+        padding: 1.5rem 1rem;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+    #predictionResult {
+        font-size: 1.1rem;
+        padding: 1.5rem;
+    }
+}
