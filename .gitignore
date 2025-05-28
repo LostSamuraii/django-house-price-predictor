@@ -29,3 +29,4 @@ Thumbs.db
 saved_models/*.joblib
 
 house_pred/
+saved_models/california_housing_model_rf.joblib
